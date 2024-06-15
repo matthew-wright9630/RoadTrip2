@@ -1,0 +1,28 @@
+.map {
+  /* background-image: url("../images/us-blank-map.jpg"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 90vw;
+  height: 80vh;
+}
+
+.map__destination-pin {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.map__destination-title {
+  /* list-style-type: none; */
+  visibility: hidden;
+}
+
+.map__pin {
+  width: 20px;
+  height: 20px;
+}
+
+.map__desitination-pin:hover .map__destination-title {
+  visibility: visible;
+  color: blue;
+}
