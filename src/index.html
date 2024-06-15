@@ -19,8 +19,22 @@
           <option value="sacramento">Sacramento</option>
           <option value="san-jose">San Jose</option>
         </select>
-        <button class="destination__add-button">Add city</button>
+        <button type="button" class="destination__add-button">Add city</button>
       </form>
+      <section class="destinations">
+        <ul class="destinations__list">
+          <template>
+            <li class="destinations__place">
+              <h2 class="destinations__title"></h2>
+              <button
+                type="button"
+                aria-label="delete button"
+                class="destinations__delete-button"
+              ></button>
+            </li>
+          </template>
+        </ul>
+      </section>
       <section class="map"></section>
     </main>
   </body>
