@@ -1,4 +1,5 @@
 import "./pages/index.css";
+import { Section } from "./components/Section.js";
 
 const destinationAddBtn = document.querySelector(".destination__add-button");
 
