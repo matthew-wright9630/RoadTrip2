@@ -1,0 +1,2 @@
+!function(){"use strict";console.log("test")}();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsIm1hcHBpbmdzIjoieUJBRUFBLFFBQVFDLElBQUksTyIsInNvdXJjZXMiOlsid2VicGFjazovL3ByYWN0aWN1bS8uL3NyYy9pbmRleC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgXCIuL3BhZ2VzL2luZGV4LmNzc1wiO1xyXG5cclxuY29uc29sZS5sb2coXCJ0ZXN0XCIpOyJdLCJuYW1lcyI6WyJjb25zb2xlIiwibG9nIl0sInNvdXJjZVJvb3QiOiIifQ==
