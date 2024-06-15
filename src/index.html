@@ -7,21 +7,21 @@
     <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
   </head>
   <body class="page">
-    <header class="header">
+    <header class="header page__section">
       <h1 class="header__title">Operation: Optimization</h1>
     </header>
     <main>
-      <form class="form">
-        <label for="search" class="form__label">Search</label>
-        <select class="form__list" name="search" id="search" size="">
-          <option value="" selected disabled>Please select</option>
-          <option value="san-fransisco">San Fransisco</option>
-          <option value="sacramento">Sacramento</option>
-          <option value="san-jose">San Jose</option>
-        </select>
-        <button type="button" class="destination__add-button">Add city</button>
-      </form>
-      <section class="destinations">
+      <section class="destinations page__section">
+        <form class="destinations-form" id="destinations-add-form">
+          <label for="search" class="destinations-form__label">Search</label>
+          <select class="destinations-form__list" name="search" id="search" size="">
+            <option value="" selected disabled>Please select</option>
+            <option value="san-fransisco">San Fransisco</option>
+            <option value="sacramento">Sacramento</option>
+            <option value="san-jose">San Jose</option>
+          </select>
+          <button type="button" class="destination__add-button">Add city</button>
+        </form>
         <ul class="destinations__list">
           <template>
             <li class="destinations__place">
