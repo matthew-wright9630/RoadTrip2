@@ -4,24 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Road Trip Optimization</title>
-    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
   </head>
   <body class="page">
-    <header class="header page__section">
-      <h1 class="header__title">Operation: Optimization</h1>
+    <header class="header">
+      <h1 class="header__title page__section">
+        Operation: Optimization
+      </h1>
+      <img
+          src="<%=require('./images/ca-map.jpg')%>"
+          alt=""
+          class="header__image"
+        />
     </header>
     <main>
       <section class="destinations page__section">
-        <form class="destinations-form" id="destinations-add-form">
-          <label for="search" class="destinations-form__label">Search</label>
-          <select class="destinations-form__list" name="search" id="search" size="">
-            <option value="" selected disabled>Please select</option>
-            <option value="san-fransisco">San Fransisco</option>
-            <option value="sacramento">Sacramento</option>
-            <option value="san-jose">San Jose</option>
-          </select>
-          <button type="button" class="destination__add-button">Add city</button>
-        </form>
+        <!-- <form class="destinations-form" id="destinations-add-form">
+          <label for="search" class="destinations-form__label"
+            >Please select the cities you would like to travel to!</label
+          >
+          <div class="destinations__selector">
+            <select
+              class="destinations-form__list"
+              name="search"
+              id="search"
+              size=""
+            >
+              <option value="" selected disabled>Select a cty</option>
+              <option value="San Fransisco">San Fransisco</option>
+              <option value="Sacramento">Sacramento</option>
+              <option value="San Jose">San Jose</option>
+            </select>
+            <button type="button" class="destination__add-button">
+              Add city
+            </button>
+          </div>
+        </form> -->
         <ul class="destinations__list">
           <template>
             <li class="destinations__place">

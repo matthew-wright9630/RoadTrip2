@@ -1,2 +1,15 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__image {
+  margin: 0 auto;
+  width: 50%;
+}
+
 .header__title {
+    margin: 0 auto;
+    width: 50%;
+  margin-top: 50px;
 }
