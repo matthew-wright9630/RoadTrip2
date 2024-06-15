@@ -1,0 +1,7 @@
+.destinations {
+    display: flex;
+}
+
+.destinations__list {
+    gap: 10px;
+}
