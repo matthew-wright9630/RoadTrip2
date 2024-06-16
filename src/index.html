@@ -11,15 +11,11 @@
       <p class="header__description">
         Find the optimal route to travel between these destinations!
       </p>
-      <img
-        src="<%=require('./images/ca-map.jpg')%>"
-        alt=""
-        class="header__image"
-      />
+      <div id="map"></div>
     </header>
     <main>
       <section class="routes page__section">
-        <form class="routes__form">
+        <form class="routes__form" id="routes__form">
           <h2 class="routes__form-title">Choose your preferred cities:</h2>
           <fieldset class="routes__fieldset">
             <label for="option-5-cities" class="routes__form-label"
@@ -29,7 +25,7 @@
                 type="radio"
                 id="option-5-cities"
                 name="route-option"
-                value="option-1"
+                value="option1"
               />
             </label>
             <label for="option-10-cities" class="routes__form-label"
@@ -40,7 +36,7 @@
                 type="radio"
                 id="option-10-cities"
                 name="route-option"
-                value="option-2"
+                value="option2"
                 size="3"
               />
             </label>
@@ -53,12 +49,14 @@
                 type="radio"
                 id="option-15-cities"
                 name="route-option"
-                value="option-3"
+                value="option3"
                 size="3"
               />
             </label>
           </fieldset>
-          <button class="routes__form-button" type="submit">Select Route</button>
+          <button class="routes__form-button" type="submit">
+            Select Route
+          </button>
         </form>
         <!-- <form class="destinations-form" id="destinations-add-form">
           <label for="search" class="destinations-form__label"
@@ -84,8 +82,133 @@
       </section>
       <section class="map"></section>
       <footer class="footer page__section">
-        <p class="footer__copyright">&#169; 2024 Christopher Lewicki, Jordan Bintrim, Saw Simon Linn, Matthew Wright</p>
+        <p class="footer__copyright">
+          &#169; 2024 Christopher Lewicki, Jordan Bintrim, Saw Simon Linn,
+          Matthew Wright
+        </p>
       </footer>
     </main>
+    <!-- prettier-ignore -->
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA0_t1eOPoRv08k-t0SYCxqHKZxduskVU&callback=initMap"
+    ></script>
+    <script>
+      function initMap() {
+        const options = {
+          zoom: 6,
+          center: { lat: 37.7749, lng: -122.4194 },
+        };
+        const map = new google.maps.Map(
+          document.getElementById('map'),
+          options
+        );
+
+        // function handleSubmit(event) {
+        //   event.preventDefault();
+
+        //   const selectedOption = document.querySelector(
+        //     'input[name="route-option"]:checked'
+        //   ).value;
+
+        //   switch (selectedOption) {
+        //     case 'option1':
+        //       runOption1();
+        //       break;
+        //     case 'option2':
+        //       runOption2();
+        //       break;
+        //     case 'option3':
+        //       runOption3();
+        //       break;
+        //     default:
+        //       console.log('No option selected');
+        //   }
+        // }
+
+        // function runOption2 = {
+
+        //   //delete this
+        //   console.log('Option 2 selected');
+        // };
+
+        // function runOption3 = {
+        //   //delete this
+        //   console.log('Option 3 selected');
+        // }
+
+        // function runOption1() {
+        //   //delete this
+        //   console.log('Option 1 selected');
+        // }
+
+        const cities = {
+          data: [
+            {
+              city: 'Loyalton',
+              coordinates: [39.676294, -120.241039],
+              segment_distance: 0.0,
+              rolling_distance: 0.0,
+              segment_travel_time: 0.0,
+              rolling_travel_time: 0.0,
+            },
+            {
+              city: 'Cudahy',
+              coordinates: [33.960569, -118.18535],
+              segment_distance: 410.0,
+              rolling_distance: 410.0,
+              segment_travel_time: 8.08,
+              rolling_travel_time: 8.08,
+            },
+            {
+              city: 'Farmersville',
+              coordinates: [36.297728, -119.206778],
+              segment_distance: 171.0,
+              rolling_distance: 581.0,
+              segment_travel_time: 3.37,
+              rolling_travel_time: 11.45,
+            },
+            {
+              city: 'Stockton',
+              coordinates: [37.957703, -121.290781],
+              segment_distance: 162.0,
+              rolling_distance: 744.0,
+              segment_travel_time: 3.2,
+              rolling_travel_time: 14.65,
+            },
+            {
+              city: 'Mill Valley',
+              coordinates: [37.906036, -122.544975],
+              segment_distance: 69.0,
+              rolling_distance: 812.0,
+              segment_travel_time: 1.35,
+              rolling_travel_time: 16.0,
+            },
+            {
+              city: 'Loyalton',
+              coordinates: [39.676294, -120.241039],
+              segment_distance: 174.0,
+              rolling_distance: 987.0,
+              segment_travel_time: 3.43,
+              rolling_travel_time: 19.43,
+            },
+          ],
+        };
+        for (let i = 0; i < cities.data.length; i++) {
+          addMarker({
+            coords: {
+              lat: cities.data[i].coordinates[0],
+              lng: cities.data[i].coordinates[1],
+            },
+          });
+        }
+
+        function addMarker(props) {
+          marker = new google.maps.Marker({
+            position: props.coords,
+            map: map,
+          });
+        }
+      }
+    </script>
   </body>
 </html>

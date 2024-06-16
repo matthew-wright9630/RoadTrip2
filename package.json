@@ -29,6 +29,8 @@
     "webpack-dev-server": "4.9.3"
   },
   "dependencies": {
-    "core-js": "3.23.5"
+    "@googlemaps/js-api-loader": "^1.16.6",
+    "core-js": "3.23.5",
+    "leaflet": "^1.9.4"
   }
 }

@@ -6,6 +6,15 @@
   height: 80vh;
 }
 
+#map {
+  display: flex;
+  align-items: center;
+  height: 700px;
+  margin: 0 200px;
+  width: calc(100% - 400px);
+  border: 1px solid black;
+}
+
 .map__destination-pin {
   list-style-type: none;
   display: flex;
