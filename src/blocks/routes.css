@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 620px) {
   .routes__form {
-      margin: 0 auto;
-      width: 90%;
+    margin: 0 auto;
+    width: 90%;
   }
 }

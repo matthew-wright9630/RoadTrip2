@@ -18,10 +18,16 @@ const totalTravelTime = document.querySelector(
   ".header__map-data__total-travel-time"
 );
 
-const travelDescription = document.querySelector(".header__map-data-city-names");
+const travelDescription = document.querySelector(
+  ".header__map-data-city-names"
+);
 
-const closetAttraction = document.querySelector(".header__map-data__attraction__name");
-const distanceToAttraction = document.querySelector(".header__map-data__distance-to-attraction");
+const closetAttraction = document.querySelector(
+  ".header__map-data__attraction__name"
+);
+const distanceToAttraction = document.querySelector(
+  ".header__map-data__distance-to-attraction"
+);
 
 const optimalRoute1 = [
   {
@@ -316,5 +322,5 @@ export {
   totalTravelTime,
   closetAttraction,
   distanceToAttraction,
-  travelDescription
+  travelDescription,
 };

@@ -1,6 +1,6 @@
 .page {
   background-color: #003262;
-  color: #fff
+  color: #fff;
 }
 
 .page__section {
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 620px) {
-    .page__section {
-        margin: 0;
-    }
+  .page__section {
+    margin: 0;
+  }
 }
