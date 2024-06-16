@@ -1,8 +1,15 @@
 .map {
+  display: flex;
+  flex-direction: column;
 }
 
 .map__image {
   margin: 0 100px;
+  width: calc(100% - 200px);
+}
+
+.map__next-btn {
+  margin: 10px 100px;
   width: calc(100% - 200px);
 }
 

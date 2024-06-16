@@ -5,16 +5,43 @@ import {
   destinationList,
   destinationSelect,
   optimalRoute1,
+  optimalRoute2,
+  optimalRoute3
 } from "./utils/constants.js";
 import { Section } from "./components/Section.js";
 import { Api } from "./components/Api.js";
 
 const mapSelector = document.querySelector(".map__image");
 
+const nextButton = document.querySelector(".map__next-btn");
+
 routeSubmitBtn.addEventListener("click", () => {
+    let selectedRoute;
+  let nextBtnIterationNum = 0;
+  let routeMaximum = 0;
   const checkedRadio = document.querySelector(
     "input[name=route-option]:checked"
   ).value;
+  if (checkedRadio === "option-1") {
+    routeMaximum = 5;
+    selectedRoute = optimalRoute1;
+  }
+  else if (checkedRadio === "option-2") {
+    routeMaximum = 10;
+    selectedRoute = optimalRoute2;
+  }
+  else if (checkedRadio === "option-3") {
+    routeMaximum = 15;
+    selectedRoute = optimalRoute3;
+  }
+  displayRoute(selectedRoute, nextBtnIterationNum);
+  nextButton.addEventListener("click", () => {
+    nextBtnIterationNum++;
+    if (nextBtnIterationNum === routeMaximum) {
+      nextBtnIterationNum = 0;
+    }    
+    showNextRoute(selectedRoute,nextBtnIterationNum);
+  });
 });
 
 /*const src =
@@ -151,12 +178,31 @@ api.getBaseMap().then((res) => {
   console.log(mapSelector);
 });
 
-api.addLocation(optimalRoute1).then((res) => {
-  setMap(res, "5 locations added");
-});
+function displayRoute(route, num) {
+  console.log(route);
+  api.addLocation(route, num).then((res) => {
+    console.log(res, "res");
+    setMap(res);
+  });
+}
 
 function setMap(data, routeType) {
+  console.log(data, "data");
   mapSelector.src = data;
   mapSelector.alt = routeType;
 }
-// insertMap(baseMap);
+
+function showNextRoute(route,num) {
+  displayRoute(route, num);
+}
+
+// function addALocation(location) {
+//     let locationList = ""
+//     for (let i=0; i<location.length-1; i++) {
+//      locationList += `start=${location[i].coordinates}|marker-${i}end=${location[i+1].coordinates}|marker-${i+1}`;
+//     }
+// }
+
+// setMap(addALocation(optimalRoute1),"optimal 1")
+
+// addALocation(optimalRoute1);
