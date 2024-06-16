@@ -11,6 +11,16 @@ const mapSelector = document.querySelector(".header__map-image");
 
 const nextButton = document.querySelector(".header__map-next-btn");
 
+const travelToCityTime = document.querySelector(
+  ".header__map-data__travel-to-city"
+);
+const totalTravelTime = document.querySelector(
+  ".header__map-data__total-travel-time"
+);
+
+const closetAttraction = document.querySelector(".header__map-data__attraction__name");
+const distanceToAttraction = document.querySelector(".header__map-data__distance-to-attraction");
+
 const optimalRoute1 = [
   {
     city: "Loyalton",
@@ -51,6 +61,8 @@ const optimalRoute1 = [
     rolling_distance: 812.0,
     segment_travel_time: 1.35,
     rolling_travel_time: 16.0,
+    closest_attraction: "Alcatraz",
+    distance_to_attraction: 9,
   },
   {
     city: "Loyalton",
@@ -134,6 +146,8 @@ const optimalRoute2 = [
     rolling_distance: 1345.0,
     segment_travel_time: 1.01,
     rolling_travel_time: 26.49,
+    closest_attraction: "Universal Studios Hollywood",
+    distance_to_attraction: 15,
   },
   {
     city: "Temple City",
@@ -233,6 +247,8 @@ const optimalRoute3 = [
     rolling_distance: 849.0,
     segment_travel_time: 0.34,
     rolling_travel_time: 16.73,
+    closest_attraction: "Universal Studios Hollywood",
+    distance_to_attraction: 15,
   },
   {
     city: "Fowler",
@@ -293,5 +309,9 @@ export {
   optimalRoute2,
   optimalRoute3,
   mapSelector,
-  nextButton
+  nextButton,
+  travelToCityTime,
+  totalTravelTime,
+  closetAttraction,
+  distanceToAttraction
 };

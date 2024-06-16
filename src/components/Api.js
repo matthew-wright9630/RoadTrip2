@@ -25,16 +25,14 @@ class Api {
       `https://www.mapquestapi.com/directions/v2/route&from=${list[1].coordinates}&to=${list[5].coordinates}&key=${this._authToken}&center=36.778259,-119.417931&zoom=5&size=@2x`
     )
       .then((res) => {
-        console.log(res, "get route");
         return res;
       })
       .catch((err) => {
-        console.log(err.message, "error message");
+        console.error(err.message, "error message");
       });
   }
 
   addLocation(list, routeNum) {
-    console.log(routeNum);
     let locationList = "";
     let iterationNum = 1;
     list.forEach((location) => {
@@ -42,7 +40,7 @@ class Api {
       iterationNum++;
     });
     return fetch(
-      `${this._baseUrl}?start=${list[routeNum].coordinates}|marker-${routeNum+1}&end=${list[routeNum+1].coordinates}|marker-${routeNum+2}&locations=${locationList}&key=${this._authToken}&center=36.778259,-119.417931&zoom=5&size=@2x`
+      `${this._baseUrl}?start=${list[routeNum].coordinates}|marker-sm-${routeNum+1}&end=${list[routeNum+1].coordinates}|marker-sm-${routeNum+2}&locations=${locationList}&key=${this._authToken}&center=36.778259,-119.417931&zoom=5&size=@2x`
     ).then((res) => res.url);
   }
 }
