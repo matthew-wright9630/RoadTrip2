@@ -7,21 +7,21 @@ import {
 } from "./utils/constants.js";
 import { Section } from "./components/Section.js";
 
-fetch("optimal_route_5.json")
-    .then(response => response.json)
-    .then(json => console.log(json));
+// fetch("optimal_route_5.json")
+//     .then(response => response.json)
+//     .then(json => console.log(json));
 
-async function getMapData() {
-  const requestURL = require("../optimal_route_5.json");
-  const request = new Request(requestURL);
+// async function getMapData() {
+//   const requestURL = require("../optimal_route_5.json");
+//   const request = new Request(requestURL);
 
-  const response = await fetch(request);
-  const routeDataText = await response.text();
+//   const response = await fetch(request);
+//   const routeDataText = await response.text();
 
-  const routeData = JSON.parse(routeDataText);
-}
+//   const routeData = JSON.parse(routeDataText);
+// }
 
-getMapData();
+// getMapData();
 
 // const destinationAddBtn = document.querySelector(".destination__add-button");
 

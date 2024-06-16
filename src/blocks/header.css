@@ -3,13 +3,19 @@
   flex-direction: column;
 }
 
+.header__title {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.header__description {
+  margin: 20px auto;
+  width: 50%;
+  font-size: 20px;
+}
+
 .header__image {
   margin: 0 auto;
   width: 50%;
-}
-
-.header__title {
-    margin: 0 auto;
-    width: 50%;
-  margin-top: 50px;
 }

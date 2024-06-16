@@ -7,17 +7,58 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="header__title page__section">
-        Operation: Optimization
-      </h1>
+      <h1 class="header__title page__section">Operation: Optimization</h1>
+      <p class="header__description">
+        Find the optimal route to travel between these destinations!
+      </p>
       <img
-          src="<%=require('./images/ca-map.jpg')%>"
-          alt=""
-          class="header__image"
-        />
+        src="<%=require('./images/ca-map.jpg')%>"
+        alt=""
+        class="header__image"
+      />
     </header>
     <main>
-      <section class="destinations page__section">
+      <section class="routes page__section">
+        <form class="routes__form">
+          <fieldset class="routes__fieldset">
+            <legend class="route__legend">Choose your preferred cities:</legend>
+            <input
+              class="routes-form__input routes__input-radio"
+              type="radio"
+              id="option-5-cities"
+              name="route-option"
+              value="option-1"
+            />
+            <label for="option-5-cities"
+              >Loyalton, Mill Valley, Stockton, Farmersville, Cudahy</label
+            >
+            <input
+              class="routes-form__input routes__input-radio"
+              type="radio"
+              id="option-10-cities"
+              name="route-option"
+              value="option-2"
+              size="3"
+            />
+            <label for="option-10-cities"
+              >Pittsburg, Commerce, Santa Paula, Yreka, Cudahy, Oxnard,
+              Calimesa, Temple City, Laguna Beach, Fillmore</label
+            >
+            <input
+              class="routes-form__input routes__input-radio"
+              type="radio"
+              id="option-15-cities"
+              name="route-option"
+              value="option-3"
+              size="3"
+            />
+            <label for="option-15-cities"
+              >Millbrae, Santa Maria, Calexico, Yreka, Milpitas, Compton,
+              Pomona, Hollister, Riverbank, Blythe, Arvin, Cathedral City,
+              Moorpark, Fowler, Calimesa</label
+            >
+          </fieldset>
+        </form>
         <!-- <form class="destinations-form" id="destinations-add-form">
           <label for="search" class="destinations-form__label"
             >Please select the cities you would like to travel to!</label
@@ -39,18 +80,6 @@
             </button>
           </div>
         </form> -->
-        <ul class="destinations__list">
-          <template>
-            <li class="destinations__place">
-              <h2 class="destinations__title"></h2>
-              <button
-                type="button"
-                aria-label="delete button"
-                class="destinations__delete-button"
-              ></button>
-            </li>
-          </template>
-        </ul>
       </section>
       <section class="map"></section>
     </main>
