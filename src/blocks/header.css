@@ -44,6 +44,10 @@
   font-size: 18px;
 }
 
+.header__map-comparison {
+  margin: 0 auto;
+}
+
 .header__map-next-btn {
   margin: 10px auto;
   width: calc(100% - 200px);

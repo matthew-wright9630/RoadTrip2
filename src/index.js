@@ -11,10 +11,15 @@ import {
   distanceToAttraction,
   closetAttraction,
   travelDescription,
+  randomRoute1,
+  randomRoute2,
+  randomRoute3,
+  timeComparison,
 } from "./utils/constants.js";
 import { Api } from "./components/Api.js";
 
-let selectedRoute;
+let seletedRandomRoute;
+let selectedOptimalRoute;
 let nextBtnIterationNum = 0;
 let routeMaximum = 0;
 
@@ -31,17 +36,20 @@ routeSubmitBtn.addEventListener("click", (evt) => {
   ).value;
   if (checkedRadio === "option-1") {
     routeMaximum = 5;
-    selectedRoute = optimalRoute1;
+    selectedOptimalRoute = optimalRoute1;
+    seletedRandomRoute = randomRoute1;
   } else if (checkedRadio === "option-2") {
     routeMaximum = 10;
-    selectedRoute = optimalRoute2;
+    selectedOptimalRoute = optimalRoute2;
+    seletedRandomRoute = randomRoute2;
   } else if (checkedRadio === "option-3") {
     routeMaximum = 15;
-    selectedRoute = optimalRoute3;
+    selectedOptimalRoute = optimalRoute3;
+    seletedRandomRoute = randomRoute3;
   }
-  displayClosestAttraction(selectedRoute);
-  displayTravelInformation(selectedRoute, nextBtnIterationNum);
-  displayRoute(selectedRoute, nextBtnIterationNum);
+  displayClosestAttraction(selectedOptimalRoute);
+  displayTravelInformation(selectedOptimalRoute, nextBtnIterationNum);
+  displayRoute(selectedOptimalRoute, nextBtnIterationNum);
   nextButton.addEventListener("click", nextButtonClicked);
 });
 
@@ -94,12 +102,16 @@ function displayClosestAttraction(route) {
 function nextButtonClicked() {
   nextBtnIterationNum++;
   if (nextBtnIterationNum === routeMaximum) {
+    const timeRouteDifference =
+      seletedRandomRoute[routeMaximum].rolling_travel_time -
+      selectedOptimalRoute[routeMaximum].rolling_travel_time;
     nextButton.disabled = true;
-    totalTravelTime.textContent = `Total time traveled: ${selectedRoute[routeMaximum].rolling_travel_time}`;
+    totalTravelTime.textContent = `Total time traveled: ${selectedOptimalRoute[routeMaximum].rolling_travel_time}`;
     travelToCityTime.textContent = `You have arrived at the last destination!`;
-    displayRoute(selectedRoute, routeMaximum - 1);
+    timeComparison.textContent = `The optimal route would take ${totalTravelTime.textContent}, while the "random" route would take ${seletedRandomRoute[routeMaximum].rolling_travel_time}. The optimal route would save ${timeRouteDifference} hours!`;
+    displayRoute(selectedOptimalRoute, routeMaximum - 1);
   } else {
-    displayTravelInformation(selectedRoute, nextBtnIterationNum);
-    showNextRoute(selectedRoute, nextBtnIterationNum);
+    displayTravelInformation(selectedOptimalRoute, nextBtnIterationNum);
+    showNextRoute(selectedOptimalRoute, nextBtnIterationNum);
   }
 }
