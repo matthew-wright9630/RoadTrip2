@@ -10,6 +10,7 @@ import {
   totalTravelTime,
   distanceToAttraction,
   closetAttraction,
+  travelDescription
 } from "./utils/constants.js";
 import { Section } from "./components/Section.js";
 import { Api } from "./components/Api.js";
@@ -73,10 +74,11 @@ function showNextRoute(route, num) {
 }
 
 function displayTravelInformation(route, num) {
+    travelDescription.textContent = `Starting city is ${route[num].city}, and the destination is ${route[num+1].city}`
   travelToCityTime.textContent = `Time to get to next destination: ${
     route[num + 1].segment_travel_time
-  }`;
-  totalTravelTime.textContent = `Total time traveled: ${route[num].rolling_travel_time}`;
+  } hours`;
+  totalTravelTime.textContent = `Total time traveled: ${route[num].rolling_travel_time} hours`;
 }
 
 function displayClosestAttraction(route) {

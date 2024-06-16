@@ -18,6 +18,8 @@ const totalTravelTime = document.querySelector(
   ".header__map-data__total-travel-time"
 );
 
+const travelDescription = document.querySelector(".header__map-data-city-names");
+
 const closetAttraction = document.querySelector(".header__map-data__attraction__name");
 const distanceToAttraction = document.querySelector(".header__map-data__distance-to-attraction");
 
@@ -313,5 +315,6 @@ export {
   travelToCityTime,
   totalTravelTime,
   closetAttraction,
-  distanceToAttraction
+  distanceToAttraction,
+  travelDescription
 };
