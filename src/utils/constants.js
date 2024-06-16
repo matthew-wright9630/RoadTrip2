@@ -7,6 +7,10 @@ const destinationSelect = document.querySelector(".destinations-form__list");
 
 const routeSubmitBtn = document.querySelector(".routes__form-button");
 
+const mapSelector = document.querySelector(".header__map-image");
+
+const nextButton = document.querySelector(".header__map-next-btn");
+
 const optimalRoute1 = [
   {
     city: "Loyalton",
@@ -287,5 +291,7 @@ export {
   routeSubmitBtn,
   optimalRoute1,
   optimalRoute2,
-  optimalRoute3
+  optimalRoute3,
+  mapSelector,
+  nextButton
 };

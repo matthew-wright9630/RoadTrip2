@@ -7,13 +7,11 @@ import {
   optimalRoute1,
   optimalRoute2,
   optimalRoute3,
+  mapSelector,
+  nextButton
 } from "./utils/constants.js";
 import { Section } from "./components/Section.js";
 import { Api } from "./components/Api.js";
-
-const mapSelector = document.querySelector(".map__image");
-
-const nextButton = document.querySelector(".map__next-btn");
 
 routeSubmitBtn.addEventListener("click", (evt) => {
   evt.preventDefault();
@@ -23,7 +21,7 @@ routeSubmitBtn.addEventListener("click", (evt) => {
   if (document.querySelector("input[name=route-option]:checked") === null) {
     return;
   }
-  document.querySelector(".map__next-btn").removeAttribute("disabled");
+  nextButton.removeAttribute("disabled");
   const checkedRadio = document.querySelector(
     "input[name=route-option]:checked"
   ).value;
