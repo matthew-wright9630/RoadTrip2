@@ -6,7 +6,7 @@ import {
   destinationSelect,
   optimalRoute1,
   optimalRoute2,
-  optimalRoute3
+  optimalRoute3,
 } from "./utils/constants.js";
 import { Section } from "./components/Section.js";
 import { Api } from "./components/Api.js";
@@ -15,22 +15,25 @@ const mapSelector = document.querySelector(".map__image");
 
 const nextButton = document.querySelector(".map__next-btn");
 
-routeSubmitBtn.addEventListener("click", () => {
-    let selectedRoute;
+routeSubmitBtn.addEventListener("click", (evt) => {
+  evt.preventDefault();
+  let selectedRoute;
   let nextBtnIterationNum = 0;
   let routeMaximum = 0;
+  if (document.querySelector("input[name=route-option]:checked") === null) {
+    return;
+  }
+  document.querySelector(".map__next-btn").removeAttribute("disabled");
   const checkedRadio = document.querySelector(
     "input[name=route-option]:checked"
   ).value;
   if (checkedRadio === "option-1") {
     routeMaximum = 5;
     selectedRoute = optimalRoute1;
-  }
-  else if (checkedRadio === "option-2") {
+  } else if (checkedRadio === "option-2") {
     routeMaximum = 10;
     selectedRoute = optimalRoute2;
-  }
-  else if (checkedRadio === "option-3") {
+  } else if (checkedRadio === "option-3") {
     routeMaximum = 15;
     selectedRoute = optimalRoute3;
   }
@@ -39,8 +42,8 @@ routeSubmitBtn.addEventListener("click", () => {
     nextBtnIterationNum++;
     if (nextBtnIterationNum === routeMaximum) {
       nextBtnIterationNum = 0;
-    }    
-    showNextRoute(selectedRoute,nextBtnIterationNum);
+    }
+    showNextRoute(selectedRoute, nextBtnIterationNum);
   });
 });
 
@@ -192,7 +195,7 @@ function setMap(data, routeType) {
   mapSelector.alt = routeType;
 }
 
-function showNextRoute(route,num) {
+function showNextRoute(route, num) {
   displayRoute(route, num);
 }
 
