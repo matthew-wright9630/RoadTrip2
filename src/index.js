@@ -102,13 +102,16 @@ function displayClosestAttraction(route) {
 function nextButtonClicked() {
   nextBtnIterationNum++;
   if (nextBtnIterationNum === routeMaximum) {
-    const timeRouteDifference =
+    const timeRouteDifference = Math.round(
       seletedRandomRoute[routeMaximum].rolling_travel_time -
-      selectedOptimalRoute[routeMaximum].rolling_travel_time;
+        selectedOptimalRoute[routeMaximum].rolling_travel_time
+    );
     nextButton.disabled = true;
+
     totalTravelTime.textContent = `Total time traveled: ${selectedOptimalRoute[routeMaximum].rolling_travel_time}`;
     travelToCityTime.textContent = `You have arrived at the last destination!`;
-    timeComparison.textContent = `The optimal route would take ${totalTravelTime.textContent}, while the "random" route would take ${seletedRandomRoute[routeMaximum].rolling_travel_time}. The optimal route would save ${timeRouteDifference} hours!`;
+
+    timeComparison.textContent = `The optimal route would take ${totalTravelTime.textContent}, while the "random" route would take ${seletedRandomRoute[routeMaximum].rolling_travel_time}. The optimal route would save ${timeRouteDifference} approximately hours!`;
     displayRoute(selectedOptimalRoute, routeMaximum - 1);
   } else {
     displayTravelInformation(selectedOptimalRoute, nextBtnIterationNum);

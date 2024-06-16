@@ -45,7 +45,8 @@
 }
 
 .header__map-comparison {
-  margin: 0 auto;
+  font-size: 22px;
+  margin: 20px auto;
 }
 
 .header__map-next-btn {
