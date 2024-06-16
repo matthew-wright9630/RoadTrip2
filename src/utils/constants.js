@@ -5,4 +5,6 @@ const destinationList = document.querySelector(".destinations__list");
 
 const destinationSelect = document.querySelector(".destinations-form__list");
 
-export { places, destinationList, destinationSelect };
+const routeSubmitBtn = document.querySelector(".routes__form-button");
+
+export { places, destinationList, destinationSelect, routeSubmitBtn };
