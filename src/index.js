@@ -12,7 +12,6 @@ import {
   closetAttraction,
   travelDescription
 } from "./utils/constants.js";
-import { Section } from "./components/Section.js";
 import { Api } from "./components/Api.js";
 
 let selectedRoute;

@@ -59,3 +59,10 @@
 .routes__form-button:hover {
   opacity: 0.5;
 }
+
+@media screen and (max-width: 620px) {
+  .routes__form {
+      margin: 0 auto;
+      width: 90%;
+  }
+}

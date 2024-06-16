@@ -21,21 +21,27 @@
   margin: 0 100px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 .header__map-image {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: calc(100%);
   max-width: 1100px;
 }
 
 .header__map-data {
-    /* margin: 0 auto; */
-    width: calc(100%);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__map-data__title {
+    font-size: 24px;
+  }
+
+.header__paragraph {
+    font-size: 18px;
 }
 
 .header__map-next-btn {
@@ -46,34 +52,46 @@
 }
 
 .header__map-data__attraction {
-    display: column;
-    margin-bottom: 0;
+  display: column;
+  margin-bottom: 0;
 }
 
 .header__map-data__attraction__name {
-    margin: 0;
+  margin: 0;
 }
 
 .header__map-data__distance-to-attraction {
-    margin: 0;
+  margin: 0;
 }
 
 @media screen and (max-width: 620px) {
   .header__title {
-    margin: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     max-width: 1100px;
   }
 
   .header__description {
-    margin: 20px 0;
-    width: 100%;
+    margin: 20px auto;
+    width: 90%;
     max-width: 1100px;
   }
 
-  .header__map-image {
-    margin: 0;
-    width: 100%;
+  .header__map {
+    margin: 0 auto;
+    width: 90%;
     max-width: 1100px;
+  }
+
+  .header__map-data {
+    flex-direction: column;
+  }
+
+  .header__map-data__title {
+    font-size: 18px;
+  }
+
+  .header__paragraph {
+    font-size: 14px;
   }
 }
