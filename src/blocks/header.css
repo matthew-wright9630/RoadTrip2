@@ -19,3 +19,20 @@
   margin: 0 100px;
   width: calc(100% - 200px);
 }
+
+@media screen and (max-width: 620px) {
+  .header__title {
+    margin: 0;
+    width: 100%;
+  }
+
+  .header__description {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .header__image {
+    margin: 0;
+    width: 100%;
+  }
+}
