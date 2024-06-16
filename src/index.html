@@ -20,44 +20,45 @@
     <main>
       <section class="routes page__section">
         <form class="routes__form">
+          <h2 class="routes__form-title">Choose your preferred cities:</h2>
           <fieldset class="routes__fieldset">
-            <legend class="route__legend">Choose your preferred cities:</legend>
-            <input
-              class="routes-form__input routes__input-radio"
-              type="radio"
-              id="option-5-cities"
-              name="route-option"
-              value="option-1"
-            />
-            <label for="option-5-cities"
-              >Loyalton, Mill Valley, Stockton, Farmersville, Cudahy</label
-            >
-            <input
-              class="routes-form__input routes__input-radio"
-              type="radio"
-              id="option-10-cities"
-              name="route-option"
-              value="option-2"
-              size="3"
-            />
-            <label for="option-10-cities"
+            <label for="option-5-cities" class="routes__form-label"
+              >Loyalton, Mill Valley, Stockton, Farmersville, Cudahy
+              <input
+                class="routes__form-input routes__input-radio"
+                type="radio"
+                id="option-5-cities"
+                name="route-option"
+                value="option-1"
+              />
+            </label>
+            <label for="option-10-cities" class="routes__form-label"
               >Pittsburg, Commerce, Santa Paula, Yreka, Cudahy, Oxnard,
-              Calimesa, Temple City, Laguna Beach, Fillmore</label
-            >
-            <input
-              class="routes-form__input routes__input-radio"
-              type="radio"
-              id="option-15-cities"
-              name="route-option"
-              value="option-3"
-              size="3"
-            />
-            <label for="option-15-cities"
+              Calimesa, Temple City, Laguna Beach, Fillmore
+              <input
+                class="routes__form-input routes__input-radio"
+                type="radio"
+                id="option-10-cities"
+                name="route-option"
+                value="option-2"
+                size="3"
+              />
+            </label>
+            <label for="option-15-cities" class="routes__form-label"
               >Millbrae, Santa Maria, Calexico, Yreka, Milpitas, Compton,
               Pomona, Hollister, Riverbank, Blythe, Arvin, Cathedral City,
-              Moorpark, Fowler, Calimesa</label
-            >
+              Moorpark, Fowler, Calimesa
+              <input
+                class="routes__form-input routes__input-radio"
+                type="radio"
+                id="option-15-cities"
+                name="route-option"
+                value="option-3"
+                size="3"
+              />
+            </label>
           </fieldset>
+          <button class="routes__form-button" type="submit">Select Route</button>
         </form>
         <!-- <form class="destinations-form" id="destinations-add-form">
           <label for="search" class="destinations-form__label"
@@ -82,6 +83,9 @@
         </form> -->
       </section>
       <section class="map"></section>
+      <footer class="footer page__section">
+        <p class="footer__copyright">&#169; 2024 Christopher Lewicki, Jordan Bintrim, Saw Simon Linn, Matthew Wright</p>
+      </footer>
     </main>
   </body>
 </html>
